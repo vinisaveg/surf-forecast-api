@@ -40,6 +40,7 @@ Use the example.env to create the .env file with the needed variables.
     ME_CONFIG_MONGODB_ADMINUSERNAME
     ME_CONFIG_MONGODB_ADMINPASSWORD
     ME_CONFIG_MONGODB_SERVER
+    STORMGLASS_API_KEY
 
 ```
 
