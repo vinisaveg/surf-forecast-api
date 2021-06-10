@@ -1,0 +1,49 @@
+{
+    "hours": [
+        {
+            "swellDirection": {
+                "noaa": 198.87
+            },
+            "swellHeight": {
+                "noaa": 0.16
+            },
+            "swellPeriod": {
+                "noaa": 2.97
+            },
+            "time": "2021-06-10T01:00:00+00:00",
+            "waveDirection": {
+                "noaa": 214.63
+            },
+            "waveHeight": {
+                "noaa": 0.19
+            },
+            "windDirection": {
+                "noaa": 295.47
+            },
+            "windSpeed": {
+                "noaa": 2.87
+            }
+        }
+    ],
+    "meta": {
+        "cost": 1,
+        "dailyQuota": 50,
+        "end": "2021-06-20 00:00",
+        "lat": 58.7984,
+        "lng": 17.8081,
+        "params": [
+            "swellDirection",
+            "swellHeight",
+            "swellPeriod",
+            "waveDirection",
+            "waveHeight",
+            "windDirection",
+            "windSpeed"
+        ],
+        "requestCount": 1,
+        "source": [
+            "noaa"
+        ],
+        "start": "2021-06-10 00:00"
+    }
+}
