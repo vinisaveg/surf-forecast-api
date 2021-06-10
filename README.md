@@ -29,6 +29,28 @@ This is an API built with nodejs and express with the help of Waldemar Neto's No
 
 ```
 
+- Setting up the environment
+
+Use the example.env to create the .env file with the needed variables.
+
+```
+
+    MONGO_INITDB_ROOT_USERNAME
+    MONGO_INITDB_ROOT_PASSWORD
+    ME_CONFIG_MONGODB_ADMINUSERNAME
+    ME_CONFIG_MONGODB_ADMINPASSWORD
+    ME_CONFIG_MONGODB_SERVER
+
+```
+
+- Running Docker containers
+
+```
+
+    docker-compose -f docker-compose.yaml up
+
+```
+
 Now you are good to:
 
 - `yarn dev` -> to start the app in development mode
