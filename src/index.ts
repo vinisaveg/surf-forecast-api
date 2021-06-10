@@ -1,1 +1,1 @@
-console.log("App init! 🚀");
+import "./util/module-alias";
