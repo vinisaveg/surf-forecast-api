@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2019",
+    "target": "es2018",
     "moduleResolution": "node",
     "module": "commonjs",
-    "lib": ["es2019"],
+    "lib": ["es2018"],
     "sourceMap": true,
     "outDir": "build",
     "strict": true,
@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
-      "@test/*": ["./tests/*"]
+      "@tests/*": ["./tests/*"]
     },
     "rootDirs": [
       "./src",
