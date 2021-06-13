@@ -29,7 +29,7 @@ This is an API built with nodejs and express with the help of Waldemar Neto's No
 
 ```
 
-- Setting up the environment
+### Setting up the environment :electric_plug:
 
 Use the example.env to create the .env file with the needed variables.
 
@@ -52,10 +52,35 @@ Use the example.env to create the .env file with the needed variables.
 
 ```
 
+- Accessing mongo container
+
+```
+
+    docker container exec -it <mongo-container-name> /bin/bash
+
+```
+
+- Accessing mongo shell
+
+```
+
+    mongo --username <MONGO_INITDB_ROOT_USERNAME>
+
+```
+
+- Edit the Mongo URI on /config/default.json
+
+```
+
+    "mongoUrl": "mongodb://<username>:<password>@localhost:27017/<dbname>?authSource=admin"
+
+```
+
 Now you are good to:
 
 - `yarn dev` -> to start the app in development mode
-- `yarn test` -> to run all the tests
+- `yarn test:unit` -> to run all the unit tests
+- `yarn test:functional` -> to run all the functional tests
 - `yarn build` -> to compile the app to production
 - `yarn start` -> to run the app in production mode
 
