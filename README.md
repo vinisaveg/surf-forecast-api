@@ -5,11 +5,21 @@ This is an API built with nodejs and express with the help of Waldemar Neto's No
 ### Techs :computer:
 
 - [`Typescript`](https://www.typescriptlang.org)
+- [`OvernightJS`](https://github.com/seanpmaxwell/overnight/#readme)
+- [`Express`](https://expressjs.com)
+- [`axios`](https://github.com/axios/axios)
+- [`mongoose`](https://mongoosejs.com)
+
+### Database :floppy_disk:
+
+- [`MongoDB`](https://www.mongodb.com)
 
 ### Testing :heavy_check_mark:
 
 - [`Jest`](https://jestjs.io)
 - [`ts-jest`](https://kulshekhar.github.io/ts-jest/)
+- [`supertest`](https://github.com/visionmedia/supertest#readme)
+- [`nock`](https://github.com/nock/nock#readme)
 
 ### Installing :construction_worker:
 
