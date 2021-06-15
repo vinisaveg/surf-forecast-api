@@ -27,3 +27,16 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Run all tests
         run: yarn test
+
+      - shell: bash
+        if: github.ref == 'ref/heads/master'
+        name: Create SSH deployment key
+        env:
+          SSH_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+        run: ./scripts/deploy.sh
+
+      - name: deployment
+        if: github.ref == 'ref/heads/master'
+        run: git remote add umbler https://kamino.deploy.umbler.com/k46wov8j/surf-forecast-api-com.git && git push umbler master
+        env:
+          CI: true
