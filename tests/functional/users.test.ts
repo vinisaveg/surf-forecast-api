@@ -5,6 +5,7 @@ describe("Users functional tests", () => {
   beforeEach(async () => {
     await User.deleteMany({});
   });
+
   describe("When creating a new user", () => {
     it("Should successfully create a new user with encrypted password", async () => {
       const newUser = {
@@ -99,6 +100,44 @@ describe("Users functional tests", () => {
         .send({ email: newUser.email, password: "different password" });
 
       expect(response.status).toBe(401);
+    });
+  });
+
+  describe("When getting user profile info", () => {
+    it("Should return the token's owner profile information", async () => {
+      const newUser = {
+        name: "John Doe",
+        email: "john@mail.com",
+        password: "1234",
+      };
+
+      const user = await new User(newUser).save();
+      const token = AuthService.generateToken(user.toJSON());
+
+      const { body, status } = await global.testRequest
+        .get("/users/me")
+        .set({ "x-access-token": token });
+
+      expect(status).toBe(200);
+      expect(body).toMatchObject(JSON.parse(JSON.stringify({ user })));
+    });
+
+    it("Should return Not Found when the user is not found", async () => {
+      const newUser = {
+        name: "John Doe",
+        email: "john@mail.com",
+        password: "1234",
+      };
+
+      const user = new User(newUser);
+      const token = AuthService.generateToken(user.toJSON());
+
+      const { body, status } = await global.testRequest
+        .get("/users/me")
+        .set({ "x-access-token": token });
+
+      expect(status).toBe(404);
+      expect(body.message).toBe("User not found!");
     });
   });
 });
