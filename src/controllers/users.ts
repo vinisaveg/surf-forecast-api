@@ -31,16 +31,20 @@ export class UsersController extends BaseController {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return response.status(401).send({ code: 401, error: "User not found" });
+      return this.sendErrorResponse(response, {
+        code: 401,
+        message: "User not found",
+      });
     }
 
     if (!(await AuthService.comparePasswords(password, user.password))) {
-      return response
-        .status(401)
-        .send({ code: 401, error: "Password does not match" });
+      return this.sendErrorResponse(response, {
+        code: 401,
+        message: "Password does not match",
+      });
     }
 
     const token = AuthService.generateToken(user.toJSON());
-    response.status(200).send({ token });
+    response.status(200).send({ ...user.toJSON(), token });
   }
 }
