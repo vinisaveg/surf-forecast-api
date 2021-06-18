@@ -41,16 +41,20 @@ This is an API built with nodejs and express with the help of Waldemar Neto's No
 
 ### Setting up the environment :electric_plug:
 
-Use the example.env to create the .env file with the needed variables.
+Use the example.env to create the .env file with the needed variable.
 
 ```
 
-    MONGO_INITDB_ROOT_USERNAME
-    MONGO_INITDB_ROOT_PASSWORD
-    ME_CONFIG_MONGODB_ADMINUSERNAME
-    ME_CONFIG_MONGODB_ADMINPASSWORD
-    ME_CONFIG_MONGODB_SERVER
-    STORMGLASS_API_KEY
+    ME_CONFIG_MONGODB_SERVER=mongodb
+
+```
+
+Change the _apiToken_ and the _auth_ secret on config/default.json
+
+```
+
+    apiToken: "YOUR stormglass.io API KEY"
+    key: "Auth Secret"
 
 ```
 
@@ -62,27 +66,11 @@ Use the example.env to create the .env file with the needed variables.
 
 ```
 
-- Accessing mongo container
+- Mongo Express interface listening on:
 
 ```
 
-    docker container exec -it <mongo-container-name> /bin/bash
-
-```
-
-- Accessing mongo shell
-
-```
-
-    mongo --username <MONGO_INITDB_ROOT_USERNAME>
-
-```
-
-- Edit the Mongo URI on /config/default.json
-
-```
-
-    "mongoUrl": "mongodb://<username>:<password>@localhost:27017/<dbname>?authSource=admin"
+    http://localhost:8081
 
 ```
 
