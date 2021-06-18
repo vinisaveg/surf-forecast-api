@@ -41,12 +41,20 @@ This is an API built with nodejs and express with the help of Waldemar Neto's No
 
 ### Setting up the environment :electric_plug:
 
-Use the example.env to create the .env file with the needed variables.
+Use the example.env to create the .env file with the needed variable.
 
 ```
 
     ME_CONFIG_MONGODB_SERVER=mongodb
-    STORMGLASS_API_KEY=<YOUR stormglass.io API KEY>
+
+```
+
+Change the _apiToken_ and the _auth_ secret on config/default.json
+
+```
+
+    apiToken: "YOUR stormglass.io API KEY"
+    key: "Auth Secret"
 
 ```
 
